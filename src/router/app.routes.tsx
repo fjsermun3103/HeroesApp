@@ -4,7 +4,7 @@ import { HeroesLayout } from "@/heroes/layouts/HeroesLayout";
 import { HeroPage } from "@/heroes/pages/hero/HeroPage";
 import { HomePage } from "@/heroes/pages/home/HomePage";
 import { lazy } from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
 // import { SearchPage } from "@/heroes/pages/search/SearchPage";
 
@@ -22,13 +22,17 @@ export const appRouter = createBrowserRouter([
                 element: <HomePage />, 
             },
             {
-                path: 'heroes/1',
+                path: 'heroes/:idSlug',
                 element: <HeroPage />, 
             },
             {
                 path: 'search',
                 element: <SearchPage />, 
             },
+            {
+                path: '*',
+                element: <Navigate to='/' />,
+            }
         ],
     },
     {
