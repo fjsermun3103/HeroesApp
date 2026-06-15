@@ -1,9 +1,6 @@
 import { describe, expect, test } from "vitest";
-import { heroApi } from "../api/hero.api";
-import type { Hero } from "../types/hero.interface";
 import { getHeroAction } from "./get-hero.action";
 
-const BASE_URL = import.meta.env.VITE_API_URL;
 
 describe('getHeroAction', () => {
     test('should fetch hero data and return with complete image url', async() => {
